@@ -12,7 +12,7 @@ html {
 body {
     margin: 0;
     font-weight: 300;
-    height: 100vh;
+    /* height: 100vh; */
     font-family: "Roboto",sans-serif;
 }
 
@@ -21,12 +21,20 @@ body {
     color: #40404c;
 }
 
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
 
 /* Left section (Sidebar) */
 
 .left-section {
     position: fixed;
     width: 25%;
+    max-width: 300px;
     height: 100%;
     background-color: black;
     padding: 20px;
@@ -51,8 +59,8 @@ body {
 }
 
 .inner-div {
-    width: 115px;
-    height: 115px;
+    min-width: 115px;
+    min-height: 115px;
     background-color: white;
     border-radius: 50%;
     align-self: center;
@@ -65,15 +73,17 @@ body {
 .socials {
     display: flex;
     justify-content: space-around;
-    margin: 20px 0;
+    margin: auto;
+    /* margin: 20px 0; */
 }
 
 .social {
-    width: 45px;
-    height: 45px;
+    max-width: 45px;
+    max-height: 45px;
     background-color: rgb(34, 34, 34);
     border-radius: 50%;
     text-align: center;
+    margin: 5px;
 }
 
 .social:hover {
@@ -174,6 +184,17 @@ main section {
     height: 100vh;
 }
 
+.menu-button {
+    display: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid rgb(18, 153, 220);
+}
+
+.menu-icon {
+    color: rgb(18, 153, 220);
+}
 
 /* About Section */
 
@@ -638,16 +659,58 @@ footer {
 
 /* Responsiveness Style */
 
-/* @media (max-width:768px) {
-    .left-section {
-        width: 0;
-        position: absolute;
-        top: 0;
-        left: -1000px;
-        
+@media (max-width:860px) {
+    aside {
+        position:absolute;
+        display: none;
     }
+
     .right-section {
-        width: 100vw;
+        position: absolute;
+        left: -25%;
+        width: 100%;
     }
-} */
+
+    .menu-button {
+        display:block;
+        float: right;
+    }
+}
+
+@media (max-width:1020px) {
+    .social {
+        width: 40px;
+        height: 40px;
+    }
+
+    .socials-fa-brands {
+        font-size: 20px;
+
+    }
+    
+    .fa-solid,
+    .fa-regular {
+    font-size: 18px;
+    border: none;
+    }
+}
+
+@media (max-width:930px) {
+
+    .social {
+        width: 35px;
+        height: 35px;
+    }
+
+    .socials-fa-brands {
+        font-size: 16px;
+
+    }
+
+    .fa-solid,
+    .fa-regular {
+    font-size: 16px;
+    border: none;
+    }
+}
 
